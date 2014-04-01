@@ -1,0 +1,112 @@
+Postgres under cygwin:
+
+$ /usr/bin/cygserver-config
+Generating /etc/cygserver.conf file
+
+
+Warning: The following function requires administrator privileges!
+
+Do you want to install cygserver as service?
+(Say "no" if it's already installed as service) (yes/no) yes
+
+The service has been installed under LocalSystem account.
+To start it, call `net start cygserver' or `cygrunsrv -S cygserver'.
+
+Further configuration options are available by editing the configuration
+file /etc/cygserver.conf.  Please read the inline information in that
+file carefully. The best option for the start is to just leave it alone.
+
+Basic Cygserver configuration finished. Have fun!
+
+
+dattan1@wd4bed99c9b68 ~
+$ net start cygserver
+The CYGWIN cygserver service is starting.
+The CYGWIN cygserver service was started successfully.
+
+
+dattan1@wd4bed99c9b68 ~
+$ cygrunsrv -S cygserver
+
+dattan1@wd4bed99c9b68 ~
+$ initdb -D /usr/share/postgresql/data
+The files belonging to this database system will be owned by user "dattan1".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+creating directory /usr/share/postgresql/data ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 40
+selecting default shared_buffers ... 128MB
+creating configuration files ... ok
+creating template1 database in /usr/share/postgresql/data/base/1 ... ok
+initializing pg_authid ... ok
+initializing dependencies ... ok
+creating system views ... ok
+loading system objects' descriptions ... ok
+creating collations ... not supported on this platform
+creating conversions ... ok
+creating dictionaries ... ok
+setting privileges on built-in objects ... ok
+creating information schema ... ok
+loading PL/pgSQL server-side language ... ok
+vacuuming database template1 ... ok
+copying template1 to template0 ... ok
+copying template1 to postgres ... ok
+syncing data to disk ... ok
+
+WARNING: enabling "trust" authentication for local connections
+You can change this by editing pg_hba.conf or using the option -A, or
+--auth-local and --auth-host, the next time you run initdb.
+
+Success. You can now start the database server using:
+
+    postgres -D /usr/share/postgresql/data
+or
+    pg_ctl -D /usr/share/postgresql/data -l logfile start
+
++++
+
+DOS prompt
+
+>initdb -D c:\postgresql\data
+
+>set PGUSER=postgres
+
+>set PGPASSWORD=niladri
+
+>createdb mydb
+
+>psql -l
+
+++++
+
+>createdb -U postgres demo
+
+>psql -U postgres -l
+
+>psql -U postgres -d demo
+
+demo=# \dt
+
+demo=# create table cont ( ID serial, Name varchar(10), Chg int, Net int );
+
+demo=# \d cont
+
+demo=# insert into cont values ( 1, 'abc', 1, 1 );
+
+demo=# insert into cont ( name, chg, net) values ( 'abc', 1, 2 );
+
+demo=# select * from cont;
+
+demo=# \set id 2
+
+demo=# SELECT * FROM cont WHERE id = :id;
+
+++++++++++++
+
