@@ -1,2 +1,4 @@
 INSERT INTO cont (ID, NAME, CHANGE)
-VALUES (8, 'abc', 50);
+VALUES (7, 'pqr', 50);
+
+select * from p1;
