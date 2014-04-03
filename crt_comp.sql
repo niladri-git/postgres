@@ -3,5 +3,5 @@ CREATE TABLE COMPANY(
    NAME           TEXT    NOT NULL,
    AGE            INT     NOT NULL,
    ADDRESS        CHAR(50),
-   SALARY         REAL
 );
+   SALARY         REAL

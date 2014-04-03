@@ -1,4 +1,2 @@
 INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-VALUES (1, 'Paul', 32, 'California', 20000.00 );
-
-SELECT * FROM AUDIT;
+VALUES (10, 'xyz', 32, 'California', 20000.00 );
