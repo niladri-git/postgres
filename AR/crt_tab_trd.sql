@@ -1,0 +1,9 @@
+CREATE TABLE Trade (
+   ID 			SERIAL,
+   TRD_DT		DATE,
+   NAME     	TEXT    NOT NULL,
+   TRD		   	INT     NOT NULL,
+   ENT_DT		DATE,
+   COMMENTS		TEXT,
+   CONSTRAINT pk_DT_Name PRIMARY KEY (TRD_DT, NAME)
+);

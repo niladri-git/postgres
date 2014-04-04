@@ -1,0 +1,38 @@
+C:\Workspaces\Git\postgres\AR>createdb ar_db
+
+C:\Workspaces\Git\postgres\AR>psql -l
+                                             List of databases
+   Name    |  Owner   | Encoding |        Collate         |         Ctype
+   |   Access privileges
+-----------+----------+----------+------------------------+---------------------
+---+-----------------------
+ ar_db     | postgres | UTF8     | English_Australia.1252 | English_Australia.12
+52 |
+ demo      | postgres | UTF8     | English_Australia.1252 | English_Australia.12
+52 |
+ mydb      | postgres | UTF8     | English_Australia.1252 | English_Australia.12
+52 |
+ postgres  | postgres | UTF8     | English_Australia.1252 | English_Australia.12
+52 |
+ template0 | postgres | UTF8     | English_Australia.1252 | English_Australia.12
+52 | =c/postgres          +
+           |          |          |                        |
+   | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_Australia.1252 | English_Australia.12
+52 | =c/postgres          +
+           |          |          |                        |
+   | postgres=CTc/postgres
+(6 rows)
+
+
+C:\Workspaces\Git\postgres\AR>psql -d ar_db
+psql (9.3.4)
+WARNING: Console code page (850) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+ar_db=# \d
+No relations found.
+
+++++
